@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwwthymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sistema de Gerenciamento de Estudantes</title>
+	 <link href="webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+	<div class="container my-2">
+		<div class="row">
+			<h1> Lista de Estudantes </h1>
+		</div>
+		<table classe="table table-striped table-bordered">
+			<thead classe="table-dark">
+				<tr>
+					<th>Primeiro Nome do Estudante</th>
+					<th>Último Nome do Estudante</th>
+					<th>Email do Estudante</th>
+					<th>Ação</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="students: ${students}">
+					<td th:text="${students.firstName}"></td>
+					<td th:text="${students.lastName}"></td>
+					<td th:text="${students.email}"></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+</body>
+
+</html>
